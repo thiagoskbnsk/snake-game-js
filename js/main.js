@@ -80,8 +80,9 @@ const main = () => {
 
 window.onload = () => {
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-                .register('sw.js');
+        navigator.serviceWorker.register('sw.js')
+            .then(() => console.log('installed'))
+            .catch((e) => console.log('error', e));
     }
     
     main();
