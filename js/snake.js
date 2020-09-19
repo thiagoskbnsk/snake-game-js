@@ -60,6 +60,25 @@ class Snake {
 
         key && key();
     }
+
+    moveSnakeMobile(event) {
+        const { offsetY, offsetX } = event;
+
+        const xPercentage = (offsetX / this.game.width) * 100
+        const yPercentage = (offsetY / this.game.height) * 100
+        
+        if (yPercentage <= 20) {
+            this.moveToUp();
+        } else if (yPercentage >= 80) {
+            this.moveToDown();
+        } else {
+            if (xPercentage < 50) {
+                this.moveToLeft();
+            } else {
+                this.moveToRight();
+            }
+        }
+    }
     
     live() {
         this.positionX += this.movementX;
@@ -90,17 +109,13 @@ class Snake {
     }
     
     snakeHittedTheWall() {
-      const tailPosition = this.trail[0];
-
-      this.trail = this.trail.reverse();
-      this.positionX = tailPosition.x;
-      this.positionY = tailPosition.y;
-      this.game.width = this.game.width - 57;
-      this.game.height = this.game.height - 56;
-      this.hitTheWall = false;
-      this.canvas.width = this.game.width;
-      this.canvas.height = this.game.height;
-      this.game.create();
+        this.movementX = 0;
+        this.movementY = 0;
+        this.positionX = this.positionXStart;
+        this.positionY = this.positionYStart;
+        this.size = 5;
+        this.trail = [{ x: this.positionX, y: this.positionY }]
+        this.game.gameover();
     }
     
     reverseSnake(sideHitted) {

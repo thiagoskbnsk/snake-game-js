@@ -1,6 +1,6 @@
 const defaultParams = {
-    gameWidth: 800,
-    gameHeight: 800,
+    gameWidth: window.innerWidth,
+    gameHeight: window.innerHeight,
     snakePositionX: 48,
     snakePositionY: 48,
     dimension: 16,
@@ -64,6 +64,8 @@ const main = () => {
         }
     }, 200)
 
+    
+
     document.addEventListener('keydown', event => {
         snake.moveSnake(event.keyCode);
     });
@@ -72,6 +74,8 @@ const main = () => {
         if (game.state !== game.states.PLAYING) {
             game.play();
             snake.moveToRight();
+        } else {
+            snake.moveSnakeMobile(event);
         }
     })
 }
