@@ -64,8 +64,6 @@ const main = () => {
         }
     }, 200)
 
-    
-
     document.addEventListener('keydown', event => {
         snake.moveSnake(event.keyCode);
     });
