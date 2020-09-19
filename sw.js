@@ -1,14 +1,16 @@
 var cacheName = 'snake-game-pwa';
+
 var filesToCache = [
   '/',
-  'index.html',
+  '/index.html',
   '/css/main.css',
   '/js/main.js',
   '/js/game.js',
   '/js/food.js',
   '/js/snake.js',
-  'sw.js',
-  'icon.ico'
+  '/sw.js',
+  '/icon.ico',
+  '/manifest.json'
 ];
 
 /* Start the service worker and cache all of the app's content */
