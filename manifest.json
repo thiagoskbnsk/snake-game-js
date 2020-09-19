@@ -1,7 +1,7 @@
 {
   "name": "Snake Game JS",
   "short_name": "SnakeGame",
-  "start_url": "https://thiagoskbnsk.github.io/snake-game-js/index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ccc",
   "theme_color": "#ccc",
