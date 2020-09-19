@@ -1,0 +1,15 @@
+{
+  "name": "Snake Game JS",
+  "short_name": "SnakeGame",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ccc",
+  "theme_color": "#ccc",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.ico",
+      "type": "image/png", "sizes": "256x256"
+    }
+  ]
+}
