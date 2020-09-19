@@ -7,6 +7,7 @@ var filesToCache = [
   '/js/game.js',
   '/js/food.js',
   '/js/snake.js',
+  '/sw.js',
   '/icon.ico'
 ];
 
