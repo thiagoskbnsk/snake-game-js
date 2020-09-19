@@ -1,6 +1,4 @@
-var cacheName = 'snake-game-pwa';
-
-var filesToCache = [
+const filesToCache = [
   '/',
   '/index.html',
   '/css/main.css',
@@ -15,12 +13,12 @@ var filesToCache = [
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
-  // e.waitUntil(
-  //   caches.open(cacheName).then(function(cache) {
-  //     return cache.addAll(filesToCache);
-  //   })
-  // );
-  console.log('install')
+  e.waitUntil(
+    caches.open('static').then(function(cache) {
+      return cache.addAll(filesToCache);
+    })
+  );
+  // console.log('install')
 });
 
 /* Serve cached content when offline */
