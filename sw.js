@@ -13,12 +13,7 @@ const filesToCache = [
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
-  e.waitUntil(
-    caches.open('static').then(function(cache) {
-      return cache.addAll(filesToCache);
-    })
-  );
-  // console.log('install')
+  console.log('install')
 });
 
 /* Serve cached content when offline */
